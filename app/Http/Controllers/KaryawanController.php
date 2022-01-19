@@ -88,7 +88,9 @@ class KaryawanController extends Controller
     public function destroy($id)
     {
         //
+        $karyawan=\App\Karyawan::find($id);
         $karyawan->delete();
+        
         return redirect('karyawan');
     }
 }
