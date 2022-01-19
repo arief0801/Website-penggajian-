@@ -23,4 +23,4 @@ Route::get('about', function () {
 });
 
 
-Route::resource('karyawan', 'KaryawanController');
+Route::resource('karyawan','KaryawanController');

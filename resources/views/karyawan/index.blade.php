@@ -17,21 +17,27 @@
                     <th class="text-center">No</th>
                     <th class="text-center">nik</th>
                     <th class="text-center">Nama Pegawai</th>
-                    <th class="text-center">Jenis Kelamin</th>
+                    {{-- <th class="text-center">Jenis Kelamin</th>
                     <th class="text-center">Jabatan</th>
-                    <th class="text-center">Action</th>
+                    <th class="text-center">Action</th> --}}
                 </tr>
+                @foreach ($karyawans as $karyawan)
                 <tr>
-                    <td class="text-center">1</td>
-                    <td class="text-center">3204320801010004</td>
-                    <td class="text-center">Arief Rahman</td>
-                    <td class="text-center">Laki Laki</td>
-                    <td class="text-center">Karyawan Lepas</td>
+                    <td></td>
+                    <td>{{$karyawan->nama}}</td>
+                    <td>{{$karyawan->jabatan}}</td>
                     <td>
-                        <a href="tambahkaryawan" class=" btn btn-primary">edit</a>
-                        <a href="" onclick="return confirm('hapus')" class="btn btn-danger">delete</a>
+                      <a href="{{route('karyawan.edit',$karyawan->id)}}" class="btn btn-primary">Edit</a>
                     </td>
-                </tr>
+                    <td>
+                      <form action="{{route('karyawan.destroy',$karyawan->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                      </form>
+                    </td>
+                  </tr>           
+              @endforeach
             </table>
         </div>
       </div>    

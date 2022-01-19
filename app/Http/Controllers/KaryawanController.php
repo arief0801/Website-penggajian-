@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Karyawan;
 use Illuminate\Http\Request;
 
 class KaryawanController extends Controller
@@ -38,6 +39,8 @@ class KaryawanController extends Controller
     public function store(Request $request)
     {
         //
+        Karyawan::create($request->all());
+        return redirect('karyawan');
     }
 
     /**
@@ -60,6 +63,7 @@ class KaryawanController extends Controller
     public function edit($id)
     {
         //
+        return view('karyawan.edit',compact('karyawan'));
     }
 
     /**
@@ -72,6 +76,7 @@ class KaryawanController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return view('karyawan.edit',compact('karyawan'));
     }
 
     /**
@@ -83,5 +88,7 @@ class KaryawanController extends Controller
     public function destroy($id)
     {
         //
+        $karyawan->delete();
+        return redirect('karyawan');
     }
 }
