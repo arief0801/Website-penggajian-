@@ -11,7 +11,8 @@
     </div>
     <div class="card" style="width:60% margin=bottom 100px;">
         <div class="card-body">
-            <form action="{{route('karyawan.store')}}" method="POST">
+            <form  action="{{route('karyawan.store')}}" method="post">
+                @csrf 
                 <div class="form-group">
                     <label for="nama">Nama Karyawan</label>
                     <input type="text" name="nama" class="form form-control">
