@@ -14,6 +14,8 @@ class KaryawanController extends Controller
     public function index()
     {
         //
+        $karyawans = Karyawan::all();
+        return view('karyawan.index',compact('karyawans'));
     }
 
     /**
@@ -24,6 +26,7 @@ class KaryawanController extends Controller
     public function create()
     {
         //
+        return view('karyawan.create');
     }
 
     /**

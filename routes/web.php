@@ -21,3 +21,6 @@ Route::get('index', function () {
 Route::get('about', function () {
     return view('about');
 });
+
+
+Route::resource('karyawan', 'KaryawanController');
