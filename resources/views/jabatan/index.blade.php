@@ -17,9 +17,9 @@
                     <th class="text-center">No</th>
                     <th class="text-center">nik</th>
                     <th class="text-center">Nama Pegawai</th>
-                    {{-- <th class="text-center">Jenis Kelamin</th>
+                    <th class="text-center">Jenis Kelamin</th>
                     <th class="text-center">Jabatan</th>
-                    <th class="text-center">Action</th> --}}
+                    <th class="text-center">Action</th>
                 </tr>
                 @foreach ($jabatans as $jabatan)
                 <tr>
