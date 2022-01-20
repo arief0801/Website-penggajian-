@@ -15,13 +15,12 @@
             <table class="table table-bordered table-striped mt-2">
                 <tr>
                     <th class="text-center">No</th>
-                    <th class="text-center">nik</th>
-                    <th class="text-center">Nama Pegawai</th>
-                    <th class="text-center">Jenis Kelamin</th>
-                    <th class="text-center">Jabatan</th>
+                    <th class="text-center">Nama Jabatan</th>
+                    <th class="text-center">Tunjangan Makan</th>
+                    <th class="text-center">Tunjangan Transportasi</th>
                     <th class="text-center">Action</th>
                 </tr>
-                @foreach ($jabatans as $jabatan)
+                {{--@foreach ($jabatans as $jabatan)
                 <tr>
                     <td></td>
                     <td>{{$jabatan->nama}}</td>
@@ -36,7 +35,7 @@
                       </a>
                     </td>
                   </tr>           
-              @endforeach
+              @endforeach--}}
             </table>
         </div>
       </div>    

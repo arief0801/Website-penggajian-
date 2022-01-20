@@ -15,8 +15,8 @@ class JabatanController extends Controller
     public function index()
     {
         //
-        $jabatans = Jabatan::all();
-        return view('jabatan.index',compact('jabatans'));
+        //$jabatans = Jabatan::all();
+        return view('jabatan.index');//,compact('jabatans'));
     }
 
     /**
