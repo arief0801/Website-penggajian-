@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'Data Karyawan')
+@section('title', 'Data Jabatan')
 
 @section('container')
     <center>
@@ -9,7 +9,7 @@
 
     <div class="card text-center">
         <div class="card-header">
-            <a href="karyawan/create" class="btn btn-success">Tambah Data</a>
+            <a href="jabatan/create" class="btn btn-success">Tambah Data</a>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped mt-2">
@@ -21,15 +21,15 @@
                     <th class="text-center">Jabatan</th>
                     <th class="text-center">Action</th> --}}
                 </tr>
-                @foreach ($karyawans as $karyawan)
+                @foreach ($jabatans as $jabatan)
                 <tr>
                     <td></td>
-                    <td>{{$karyawan->nama}}</td>
-                    <td>{{$karyawan->jabatan}}</td>
+                    <td>{{$jabatan->nama}}</td>
+                    <td>{{$jabatan->pangkat}}</td>
                     <td>
-                      <a href="{{route('karyawan.edit',$karyawan->id)}}" class="btn btn-primary">Edit</a>
+                      <a href="{{route('jabatan.edit',$karyawan->id)}}" class="btn btn-primary">Edit</a>
           
-                      <a  action="{{route('karyawan.destroy',$karyawan->id)}}" method="post">
+                      <a  action="{{route('jabatan.destroy',$karyawan->id)}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit">Delete</button>
