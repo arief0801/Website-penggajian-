@@ -14,16 +14,24 @@
             <form  action="{{route('karyawan.store')}}" method="post">
                 @csrf 
                 <div class="form-group">
-                    <label for="nama">Nama Karyawan</label>
-                    <input type="text" name="nama" class="form form-control">
-                    
+                    <label for="nik">NIK</label>
+                    <input type="number" name="nik" class="form form-control">
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="jabatan">Jabatan</label>
+                    <label for="nama">Nama Pegawai</label>
+                    <input type="text" name="nama" class="form form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="jabatan">Alamat</label>
                     <input type="varchar" name="jabatan" class="form form-control">
                 </div>
                 <br>
+                <div class="form-group">
+                    <label for="">nomortelepon</label>
+                    <input type="number" name="" class="form form-control">
+                </div>
                 <button type="submit" class="btn btn-success mt-5" style="margin-bottom: 70px">Simpan</button>
                 {{--<div class="form-group">
                     <label for="">Tunjangan Transportasi</label>

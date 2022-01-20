@@ -17,15 +17,19 @@
                     <th class="text-center">No</th>
                     <th class="text-center">nik</th>
                     <th class="text-center">Nama Pegawai</th>
-                    {{-- <th class="text-center">Jenis Kelamin</th>
-                    <th class="text-center">Jabatan</th>
-                    <th class="text-center">Action</th> --}}
+                    <th class="text-center">Jenis Kelamin</th>
+                    <th class="text-center">Alamat</th>
+                    <th class="text-center">Nomor telepon</th>
+                    <th class="text-center">Action</th>
                 </tr>
                 @foreach ($karyawans as $karyawan)
                 <tr>
-                    <td></td>
+                    <td>{{--{{$no++}}--}}</td>
+                    <td>{{$karyawan->nik}}</td>
                     <td>{{$karyawan->nama}}</td>
-                    <td>{{$karyawan->jabatan}}</td>
+                    <td>{{$karyawan->jeniskelamin}}</td>
+                    <td>{{$karyawan->alamat}}</td>
+                    <td>{{$karyawan->nomortelepon}}</td>
                     <td>
                       <a href="{{route('karyawan.edit',$karyawan->id)}}" class="btn btn-primary">Edit</a>
           
