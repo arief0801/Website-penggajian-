@@ -24,12 +24,12 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="jabatan">Alamat</label>
-                    <input type="varchar" name="jabatan" class="form form-control">
+                    <label for="alamat">Alamat</label>
+                    <input type="varchar" name="alamat" class="form form-control">
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="">nomortelepon</label>
+                    <label for="">Nomor Telepon</label>
                     <input type="number" name="" class="form form-control">
                 </div>
                 <button type="submit" class="btn btn-success mt-5" style="margin-bottom: 70px">Simpan</button>
