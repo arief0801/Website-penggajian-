@@ -26,3 +26,5 @@ Route::get('about', function () {
 Route::resource('karyawan','KaryawanController');
 
 Route::resource('jabatan', 'JabatanController');
+
+Route::resource('potongan', 'PotonganController');

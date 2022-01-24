@@ -17,7 +17,7 @@
                     <label for="nama" > Pilih Jabatan  </label>
                         <select name="" id="">
                             <option value="">Direktur Operasional</option>
-                            <option value="">Sekertaris</option>
+                            <option value="">Sekertaris</option>c
                             <option value="">Bendahara</option>
                         </select>
                 </div>

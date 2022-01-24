@@ -24,13 +24,23 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <input type="varchar" name="alamat" class="form form-control">
+                    <label for="">Jenis Kelamin</label>
+                    <input type="text" name="jenis_kelamin" class="form form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Jabatan</label>
+                    <input type="varchar" name="jabatan" class="form form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Nomor Rekening</label>
+                    <input type="number" name="no_rekening" class="form form-control">
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="">Nomor Telepon</label>
-                    <input type="number" name="" class="form form-control">
+                    <input type="number" name="no_telepon" class="form form-control">
                 </div>
                 <button type="submit" class="btn btn-success mt-5" style="margin-bottom: 70px">Simpan</button>
                 {{--<div class="form-group">

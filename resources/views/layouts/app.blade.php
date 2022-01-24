@@ -30,6 +30,7 @@
                   <li><a class="dropdown-item" href="{{ url('karyawan')}}" >Data Karyawan</a></li>
                   <li><a class="dropdown-item" href="{{ url('jabatan')}}">Data Jabatan</a></li>
                   <li><a class="dropdown-item" href="{{ url('gaji')}}">Data Gaji</a></li>
+                  <li><a class="dropdown-item" href="{{ url('potongan')}}">Data Gaji</a></li>
                 </ul>
               </li>
               <li class="nav-item">
