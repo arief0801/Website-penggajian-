@@ -3,7 +3,7 @@
 
 @section('title', 'Tambah Data karyawan')
 
-@section('container')
+@section('content')
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -22,12 +22,7 @@
                     <label for="nama">Nama Pegawai</label>
                     <input type="text" name="nama" class="form form-control">
                 </div>
-                <br>
-                <div class="form-group">
-                    <label for="">Jenis Kelamin</label>
-                    <input type="text" name="jenis_kelamin" class="form form-control">
-                </div>
-                <br>
+                <br> 
                 <div class="form-group">
                     <label for="">Jabatan</label>
                     <input type="varchar" name="jabatan" class="form form-control">

@@ -14,8 +14,6 @@ class PotonganController extends Controller
     public function index()
     {
         //
-        $potongans = Potongan::all();
-        return view('potongan.index',compact('potongans'));
     }
 
     /**

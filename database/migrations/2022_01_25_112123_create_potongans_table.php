@@ -15,8 +15,9 @@ class CreatePotongansTable extends Migration
     {
         Schema::create('potongans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps('nama_potongan');
-            $table->timestamps('jumlah');
+            $table->string('potongan');
+            $table->string('jumlah');
+            $table->timestamps();
         });
     }
 

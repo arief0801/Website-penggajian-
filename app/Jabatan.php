@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Jabatan extends Model
 {
     //
-    protected $fillable =['nama','pangkat'];
+    protected $fillable =['jabatan','gaji_pokok','tunjangan'];
 }

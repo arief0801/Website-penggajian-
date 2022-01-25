@@ -16,7 +16,7 @@ class KaryawanController extends Controller
     {
         //
         $karyawans = Karyawan::all();
-        return view('karyawan.index',compact('karyawans'));
+        return view('karyawan.index',['karyawan' => $karyawans]);
     }
 
     /**
@@ -39,7 +39,7 @@ class KaryawanController extends Controller
     public function store(Request $request)
     {
         //
-        Karyawan::create($request->all());
+        karyawan::create($request->all());
         return redirect('karyawan');
     }
 
@@ -57,38 +57,40 @@ class KaryawanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Karyawan $karyawan
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Karyawan $karyawan)
     {
         //
-        return view('karyawan.edit',compact('karyawan'));
+      
+        return view('karyawan.edit', compact('karyawan'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Karyawan $karyawan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Karyawan $karyawan)
     {
         //
-        return view('karyawan.edit',compact('karyawan'));
+        $karyawan->update($request->all());
+        return redirect('karyawan');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Karyawan $karyawan
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Karyawan $karyawan)
     {
         //
-        $karyawan=\App\Karyawan::find($id);
+        
         $karyawan->delete();
         
         return redirect('karyawan');

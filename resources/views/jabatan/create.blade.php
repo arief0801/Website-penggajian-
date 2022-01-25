@@ -10,33 +10,29 @@
         <h1 class="h3 mb-0 text-gray-800"></h1>
     </div>
     <div class="card" style="width:60% margin=bottom 100px;">
-        <div class="card-body">
-            <form  action="{{route('jabatan.store')}}" method="post">
-                @csrf 
-                <div class="form-group"  name="nama" class="form form-control">
-                    <label for="nama" > Pilih Jabatan  </label>
-                        <select name="" id="">
-                            <option value="">Direktur Operasional</option>
-                            <option value="">Sekertaris</option>c
-                            <option value="">Bendahara</option>
-                        </select>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="">Tunjangan Transportasi</label>
-                    <input type="" name="" class="form form-control">  
-                </div>
-                <br>
-                <div class="form-group" style="">
-                    <label for="">Tunjangan Makan</label>
-                    <input type="text" name="" class="form form-control">
-                </div>
-                <button type="submit" class="btn btn-success mt-5" style="margin-bottom: 70px">Simpan</button>
-                <br>
-                <a href="/karyawan" class="btn btn-danger mt-5" style="margin-bottom: 70px">Batal</a>--}}
-            </form>
-        </div>
-    </div>
+      <div class="card-body">
+          <form  action="{{route('jabatan.store')}}" method="post">
+              @csrf 
+              <div class="form-group">
+                  <label for="nik">Jabatan</label>
+                  <input type="text" name="jabatan" class="form form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                  <label for="nama">Gaji Pokok</label>
+                  <input type="number" name="gaji_pokok" class="form form-control">
+              </div>
+              <br> 
+              <div class="form-group">
+                  <label for="">Tunjangan</label>
+                  <input type="number" name="tunjangan" class="form form-control">
+              </div>
+              <br>
+              <button type="submit" class="btn btn-success mt-5" style="margin-bottom: 70px">Simpan</button>
+              <a href="/karyawan" class="btn btn-danger mt-5" style="margin-bottom: 70px">Batal</a>
+          </form>
+      </div>
+  </div>
 </div>    
 @endsection
  
