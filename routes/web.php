@@ -27,7 +27,7 @@ Route::resource('/karyawan','KaryawanController');
 
 Route::resource('/jabatan', 'JabatanController');
 
-route::resource('/potongan', 'PotonganController ');
+Route::resource('/potongan', 'PotonganController');
 
 
 

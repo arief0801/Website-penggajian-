@@ -2,7 +2,7 @@
 
 @section('title', 'Data Potongan')
 <?php $no=1?>
-@section('container')
+@section('content')
     <center>
         <h1 class="mt-5 mb-5"> Data Potongan </h1>
     </center>
@@ -19,22 +19,21 @@
                     <th class="text-center">Jumlah Potongan</th>
                     <th class="text-center">Action</th>
                 </tr>
-                {{--@foreach ($jabatans as $jabatan)
+                @foreach ($potongans as $potongan)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td>{{$jabatan->jabatan}}</td>
-                    <td> Rp {{ number_format($jabatan->gaji_pokok,0,',','.') }}</td>
-                    <td> Rp {{ number_format($jabatan->tunjangan,0,',','.')}}</td>
+                    <td>{{$potongan->potongan}}</td>
+                    <td> Rp {{ number_format($potongan->jumlah,0,',','.') }}</td>
                     <td>
-                      <a href="{{route('jabatan.edit',$jabatan->id)}}" class="btn btn-primary">Edit</a>
+                      <a href="{{route('potongan.edit',$potongan->id)}}" class="btn btn-primary">Edit</a>
           
-                      <a  action="{{route('jabatan.destroy',$jabatan->id)}}" method="post">
+                      <form   action="{{route('potongan.destroy',$potongan->id)}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit">Delete</button>
-                      </a>
+                      </form>
                     </td>
-                  </tr>--}}           
+                  </tr>           
               @endforeach
             </table>
         </div>

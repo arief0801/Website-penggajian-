@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Potongan;
 use Illuminate\Http\Request;
 
 class PotonganController extends Controller
@@ -14,6 +15,8 @@ class PotonganController extends Controller
     public function index()
     {
         //
+        $potongans = Potongan::all();
+        return view('potongan.index',compact('potongans'));
     }
 
     /**
@@ -24,6 +27,7 @@ class PotonganController extends Controller
     public function create()
     {
         //
+        return view('potongan.create');
     }
 
     /**
@@ -35,6 +39,8 @@ class PotonganController extends Controller
     public function store(Request $request)
     {
         //
+        Potongan::create($request->all());
+        return redirect('potongan');
     }
 
     /**
@@ -57,6 +63,8 @@ class PotonganController extends Controller
     public function edit($id)
     {
         //
+        $potongan = Potongan ::findOrFail($id);
+        return view('potongan.edit',compact('potongan'));
     }
 
     /**
@@ -68,7 +76,15 @@ class PotonganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //  
+        $validatedData = $request->validate([
+            'potongan' => 'required',
+            'jumlah' => 'required',
+        ]);
+        Potongan::whereId($id)->update($validatedData);
+
+        return redirect('potongan')->with('success', 'Book is successfully updated');
+        //return view('potongan.edit',compact('potongan'));
     }
 
     /**
@@ -80,5 +96,9 @@ class PotonganController extends Controller
     public function destroy($id)
     {
         //
+        $potongan=\App\Potongan::find($id);
+        $potongan->delete();
+        
+        return redirect('potongan');
     }
 }
