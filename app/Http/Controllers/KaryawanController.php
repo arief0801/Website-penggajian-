@@ -16,7 +16,7 @@ class KaryawanController extends Controller
     {
         //
         $karyawans = Karyawan::all();
-        return view('karyawan.index',['karyawan' => $karyawans]);
+        return view('karyawan.index',compact('karyawans'));
     }
 
     /**
@@ -39,7 +39,7 @@ class KaryawanController extends Controller
     public function store(Request $request)
     {
         //
-        karyawan::create($request->all());
+        Karyawan::create($request->all());
         return redirect('karyawan');
     }
 
@@ -60,10 +60,10 @@ class KaryawanController extends Controller
      * @param  \App\Karyawan $karyawan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Karyawan $karyawan)
+    public function edit( $id)
     {
         //
-      
+        $karyawan = Karyawan ::findOrFail($id);
         return view('karyawan.edit', compact('karyawan'));
     }
 
@@ -74,11 +74,20 @@ class KaryawanController extends Controller
      * @param  \App\Karyawan $karyawan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Karyawan $karyawan)
+    public function update(Request $request, $id)
     {
         //
-        $karyawan->update($request->all());
-        return redirect('karyawan');
+        $validatedData = $request->validate([
+            'nik' => 'required',
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'no_rekening' => 'required',
+            'no_telepeon' => 'required',
+        ]);
+        Karyawan::whereId($id)->update($validatedData);
+
+        return redirect('karyawan')->with('success', 'Book is successfully updated');
+       
     }
 
     /**
@@ -87,12 +96,13 @@ class KaryawanController extends Controller
      * @param  \App\Karyawan $karyawan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Karyawan $karyawan)
+    public function destroy($id)
     {
         //
-        
+        $karyawan=\App\Karyawan::find($id);
         $karyawan->delete();
-        
         return redirect('karyawan');
+        
+       
     }
 }

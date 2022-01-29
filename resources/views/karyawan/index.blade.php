@@ -1,4 +1,4 @@
-@extends('layouts/app')
+@extends('dashboard.index')
 
 @section('title', 'Data Karyawan')
 <?php $no=1?>

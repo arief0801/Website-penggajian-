@@ -63,6 +63,7 @@ class JabatanController extends Controller
     public function edit($id)
     {
         //
+        $jabatan = Jabatan ::findOrFail($id);
         return view('jabatan.edit',compact('jabatan'));
     }
 
@@ -75,8 +76,15 @@ class JabatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        return view('jabatan.edit',compact('jabatan'));
+        //return view('jabatan.edit',compact('jabatan'));
+        $validatedData = $request->validate([
+            'jabatan' => 'required',
+            'gaji_pokok' => 'required',
+            'tunjangan' => 'required',
+        ]);
+        Jabatan::whereId($id)->update($validatedData);
+
+        return redirect('jabatan')->with('success', 'Book is successfully updated');
     }
 
     /**

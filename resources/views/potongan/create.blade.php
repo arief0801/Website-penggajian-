@@ -1,5 +1,5 @@
 
-@extends('layouts/app')
+@extends('dashboard/index')
 
 @section('title', 'Tambah Data potongan')
 
