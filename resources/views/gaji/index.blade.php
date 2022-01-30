@@ -1,28 +1,31 @@
 @extends('dashboard.index')
 
-@section('title', 'Data Potongan')
+@section('title', 'Data Gaji')
 <?php $no=1?>
 @section('content')
     <center>
-        <h1 class="mt-5 mb-5"> Data Potongan </h1>
+        <h1 class="mt-5 mb-5"> Data Gaji </h1>
     </center>
 
     <div class="card text-center">
         <div class="card-header">
-            <a href="potongan/create" class="btn btn-success">Tambah Data</a>
+            <a href="gaji/create" class="btn btn-success">Tambah Data</a>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped mt-2">
                 <tr>
                     <th class="text-center">No</th>
-                    <th class="text-center">Nama Potongan</th>
-                    <th class="text-center">Jumlah Potongan</th>
-                    <th class="text-center">Action</th>
+                    <th class="text-center">Nama Karyawan</th>
+                    <th class="text-center">Jabatan </th>
+                    <td class="text-center">Gaji Pokok</td>
+                    <td class="text-center">Tunjangan</td>
+                    <td class="text-center">Potongan</td>
+                    <th class="text-center">total</th>
                 </tr>
-                @foreach ($potongans as $potongan)
-                <tr>
+                {{--@foreach ($ as $)
+                {{--<tr>
                     <td>{{$no++}}</td>
-                    <td>{{$potongan->potongan}}</td>
+                    <td>{{$->potongan}}</td>
                     <td> Rp {{ number_format($potongan->jumlah,0,',','.') }}</td>
                     <td>
                       <a href="{{route('potongan.edit',$potongan->id)}}" class="btn btn-primary">Edit</a>
@@ -33,8 +36,8 @@
                         <button class="btn btn-danger" type="submit">Delete</button>
                       </a>
                     </td>
-                  </tr>           
-              @endforeach
+                  </tr> --}}          
+              {{--@endforeach--}}
             </table>
         </div>
       </div>    

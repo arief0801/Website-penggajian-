@@ -25,11 +25,11 @@
                     <label for="nama">Nama Pegawai</label>
                     <input type="text" name="nama" class="form form-control" value="{{$karyawan->nama}}">
                 </div>
-                <br> 
+                <br>
                 <div class="form-group">
-                    <label for="">Jabatan</label>
-                    <input type="varchar" name="jabatan" class="form form-control" value="{{$karyawan->jabatan}}">
-                </div>
+                    <label for="jabatan">Jabatan </label>
+                    <input type="text" name="jabatan" class="form form-control" value="{{$karyawan->jabatan}}">
+                  </div>
                 <br>
                 <div class="form-group">
                     <label for="">Nomor Rekening</label>

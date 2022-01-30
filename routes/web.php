@@ -29,6 +29,10 @@ Route::resource('/jabatan', 'JabatanController');
 
 Route::resource('/potongan', 'PotonganController');
 
+Route::resource('/absensi', 'AbsensiController');
+
+Route::resource('/gaji', 'AbsensiController');
+
 
 
 Route::get('/home', 'HomeController@index')->name('home');

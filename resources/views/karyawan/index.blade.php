@@ -33,13 +33,12 @@
                     <td>{{$karyawan->no_telepon}}</td>
                     <td>
                       <a href="{{route('karyawan.edit',$karyawan->id)}}" class="btn btn-primary">Edit</a>
-
           
-                      <form  action="{{route('karyawan.destroy',$karyawan->id)}}" method="post">
+                      <a  action="{{route('karyawan.destroy',$karyawan->id)}}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger" style="width:auto "  type="submit">Delete</button>
-                      </form>
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                      </a>
                     </td>
                   </tr>           
               @endforeach

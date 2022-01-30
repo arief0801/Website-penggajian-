@@ -24,13 +24,18 @@
               </div>
               <br> 
               <div class="form-group">
+                <label for="jabatan">Jabatan </label>
+                <input type="text" name="jabatan" class="form form-control">
+              </div>
+              <br>
+              <div class="form-group">
                 <label for="">Nomor Rekening</label>
                 <input type="number" name="no_rekening" class="form form-control">
             </div>
             <br>
             <div class="form-group">
                 <label for="">Nomor Telepon</label>
-                <input type="number" name="nama" class="form form-control">
+                <input type="number" name="no_telepon" class="form form-control">
             </div>
               <button type="submit" class="btn btn-success mt-5" style="margin-bottom: 70px">Simpan</button>
               <a href="/karyawan" class="btn btn-danger mt-5" style="margin-bottom: 70px">Batal</a>
