@@ -31,7 +31,7 @@ Route::resource('/potongan', 'PotonganController');
 
 Route::resource('/absensi', 'AbsensiController');
 
-Route::resource('/gaji', 'AbsensiController');
+Route::resource('/gaji', 'GajiController');
 
 
 

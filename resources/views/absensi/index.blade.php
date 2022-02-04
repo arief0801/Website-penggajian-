@@ -17,27 +17,33 @@
                     <th class="text-center">No</th>
                     <th class="text-center">Nama Karyawan</th>
                     <th class="text-center">Jabatan </th>
-                    <td class="text-center">Hadir</td>
-                    <td class="text-center">Sakit</td>
-                    <td class="text-center">Alfa</td>
+                    <th class="text-center">Bulan </th>
+                    <td class="text-center" width="8%">Hadir</td>
+                    <td class="text-center" width="8%">Sakit</td>
+                    <td class="text-center" width="8%">Alfa</td>
                     <th class="text-center">Action</th>
                 </tr>
-                {{--@foreach ($ as $)
-                {{--<tr>
+                <tr>
+
+                    @foreach ($absensis as $absensi)
                     <td>{{$no++}}</td>
-                    <td>{{$->potongan}}</td>
-                    <td> Rp {{ number_format($potongan->jumlah,0,',','.') }}</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{$absensi->bulan}}</td>
+                    <td>{{$absensi->hadir}}</td>
+                    <td>{{$absensi->sakit}}</td>
+                    <td>{{$absensi->alpa}}</td>
                     <td>
-                      <a href="{{route('potongan.edit',$potongan->id)}}" class="btn btn-primary">Edit</a>
-          
-                      <a  action="{{route('potongan.destroy',$potongan->id)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                      </a>
-                    </td>
-                  </tr> --}}          
-              {{--@endforeach--}}
+                        <a href="{{ route('absensi.edit',$absensi->id) }}" class="btn btn-primary">Edit</a>
+            
+                        <a  action="{{ route('absensi.destroy',$absensi->id) }}" method="post">
+                          @csrf
+                          @method('DELETE')
+                          <button class="btn btn-danger" type="submit">Delete</button>
+                        </a>
+                      </td>
+                </tr>
+               @endforeach
             </table>
         </div>
       </div>    

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Absensi;
 use Illuminate\Http\Request;
 
 class AbsensiController extends Controller
@@ -14,7 +15,9 @@ class AbsensiController extends Controller
     public function index()
     {
         //
-        return view('absensi.index');
+        $absensis = Absensi::all();
+        return view('absensi.index',compact('absensis'));
+    
     }
 
     /**
@@ -25,6 +28,7 @@ class AbsensiController extends Controller
     public function create()
     {
         //
+        return view('absensi.create');
     }
 
     /**
@@ -36,6 +40,8 @@ class AbsensiController extends Controller
     public function store(Request $request)
     {
         //
+        Absensi::create($request->all());
+        return redirect('absensis');
     }
 
     /**
@@ -58,6 +64,8 @@ class AbsensiController extends Controller
     public function edit($id)
     {
         //
+        $absensi = Absensi ::findOrFail($id);
+        return view('absensi.edit',compact('absensi'));
     }
 
     /**
@@ -70,6 +78,15 @@ class AbsensiController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validatedData = $request->validate([
+            'bulan' => 'required',
+            'hadir' => 'required',
+            'sakit' => 'required',
+            'alpa' => 'required',
+        ]);
+        Absensi::whereId($id)->update($validatedData);
+
+        return redirect('absensi');
     }
 
     /**
@@ -81,5 +98,9 @@ class AbsensiController extends Controller
     public function destroy($id)
     {
         //
+        $absensi=\App\Absensi::find($id);
+        $absensi->delete();
+        
+        return redirect('absensi');
     }
 }

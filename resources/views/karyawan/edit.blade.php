@@ -27,9 +27,15 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="jabatan">Jabatan </label>
-                    <input type="text" name="jabatan" class="form form-control" value="{{$karyawan->jabatan}}">
-                  </div>
+                    <label for="jabatan">Jabatan</label>
+                    <select name="jabatan_id"  class="form form-control">  
+                        <option value="">Pilih Jabatan</option>
+                       @foreach ($jabatans as $id => $jabatan)
+                        <option value="{{$id }}">{{$jabatan}}</option>
+                       @endforeach
+                    <select>      
+                  </div>    
+                </div>
                 <br>
                 <div class="form-group">
                     <label for="">Nomor Rekening</label>

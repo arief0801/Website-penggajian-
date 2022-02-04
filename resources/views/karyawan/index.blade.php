@@ -28,7 +28,7 @@
                     <td>{{$no++}}</td>
                     <td>{{$karyawan->nik}}</td>
                     <td>{{$karyawan->nama}}</td>
-                    <td>{{$karyawan->jabatan}}</td>
+                    <td>{{$karyawan->jabatan->jabatan}}</td>
                     <td>{{$karyawan->no_rekening}}</td>
                     <td>{{$karyawan->no_telepon}}</td>
                     <td>

@@ -83,7 +83,7 @@ class PotonganController extends Controller
         ]);
         Potongan::whereId($id)->update($validatedData);
 
-        return redirect('potongan')->with('success', 'Book is successfully updated');
+        return redirect('potongan');
         //return view('potongan.edit',compact('potongan'));
     }
 

@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Karyawan extends Model
 {
     //
-    protected $fillable =['nik','nama','jabatan','no_rekening', 'no_telepon'];
+    protected $table="karyawans";
+    protected $primaryKey="id";
+    protected $fillable =['nik','nama','jabatan_id','no_rekening', 'no_telepon'];
+
+
+    public function jabatan()
+    {
+        return $this->belongsTo(Jabatan::class);
+    }
 }

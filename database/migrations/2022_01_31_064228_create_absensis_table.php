@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKaryawansTable extends Migration
+class CreateAbsensisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateKaryawansTable extends Migration
      */
     public function up()
     {
-        Schema::create('karyawans', function (Blueprint $table) {
+        Schema::create('absensis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nik',16);
-            $table->string('nama');
-            $table->bigIncrements('jabatan_id');
-            $table->string('no_rekening');
-            $table->string('no_telepon');
-
+            $table->integer('bulan');
+            $table->integer('hadir');
+            $table->integer('sakit');
+            $table->integer('alpa');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateKaryawansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('karyawans');
+        Schema::dropIfExists('absensis');
     }
 }

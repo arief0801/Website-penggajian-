@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jabatan;
 use App\Karyawan;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,8 @@ class KaryawanController extends Controller
     public function create()
     {
         //
-        return view('karyawan.create');
+        $jabatans = Jabatan::pluck('jabatan','id');
+        return view('karyawan.create',compact('jabatans'));
     }
 
     /**
@@ -63,8 +65,10 @@ class KaryawanController extends Controller
     public function edit( $id)
     {
         //
+        
         $karyawan = Karyawan ::findOrFail($id);
-        return view('karyawan.edit', compact('karyawan'));
+        $jabatans = Jabatan::pluck('jabatan','id');
+        return view('karyawan.edit', compact('karyawan','jabatans'));
     }
 
     /**
@@ -80,13 +84,14 @@ class KaryawanController extends Controller
         $validatedData = $request->validate([
             'nik' => 'required',
             'nama' => 'required',
-            'jabatan' => 'required',
+            'jabatan_id' => 'required',
             'no_rekening' => 'required',
             'no_telepeon' => 'required',
         ]);
         Karyawan::whereId($id)->update($validatedData);
+        
 
-        return redirect('karyawan')->with('success', 'Book is successfully updated');
+        return redirect('karyawan');
        
     }
 

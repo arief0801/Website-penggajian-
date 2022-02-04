@@ -14,7 +14,7 @@ class GajiController extends Controller
     public function index()
     {
         //
-        return view('gaji.index.');
+        return view('gaji.index');
     }
 
     /**

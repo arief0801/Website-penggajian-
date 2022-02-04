@@ -14,7 +14,7 @@
 <li class="nav-item">
     <a class="nav-link" href="{{'/potongan'}}">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>Gaji</span></a>
+        <span>Potongan</span></a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="{{'/absensi'}}">
@@ -24,7 +24,7 @@
 <li class="nav-item">
     <a class="nav-link" href="{{'/gaji'}}">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>Data Gaji</span></a>
+        <span>Gaji</span></a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="{{'/keluar'}}">
